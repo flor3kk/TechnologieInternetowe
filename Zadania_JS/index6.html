@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="fraza">Podaj fraze:</label>
+    <input type="text" id="fraza" name="fraza">
+    <button onclick="reverseWords()">Check Phrase</button>
+    <p class="result" id="result"></p>
+    
+    <script>
+        function reverseWords() {
+          var inputElement = document.getElementById("fraza");
+          var resultElement = document.getElementById("result");
+        
+          // Pobierz wprowadzoną frazę
+          var phrase = inputElement.value.trim();
+        
+          // Sprawdź czy fraza nie jest pusta
+          if (phrase === "") {
+            resultElement.textContent = "Podaj frazę przed kliknięciem!";
+            return;
+          }
+        
+          // Odwróć kolejność słów
+          var reversedWords = phrase.split(" ").reverse().join(" ");
+        
+          // Sprawdź czy na końcu zdania jest znak interpunkcyjny
+          var lastChar = phrase.slice(-1);
+          if (lastChar.match(/[.,;:!?]/)) {
+            reversedWords += lastChar;
+          }
+        
+          // Zaczynaj od wielkiej litery
+          reversedWords = reversedWords.charAt(0).toUpperCase() + reversedWords.slice(1);
+        
+          // Wyświetl wynik
+          resultElement.textContent = reversedWords;
+        }
+        </script>
+</body>
+</html>

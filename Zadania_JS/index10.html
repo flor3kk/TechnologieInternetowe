@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Papier, Kamień, Nożyce</title>
+</head>
+<body>
+
+  <h1>Papier, Kamień, Nożyce</h1>
+
+  <form id="gameForm">
+    <label>
+      <input type="checkbox" name="choice" value="kamien"> Kamień
+    </label>
+    <label>
+      <input type="checkbox" name="choice" value="papier"> Papier
+    </label>
+    <label>
+      <input type="checkbox" name="choice" value="nozyce"> Nożyce
+    </label>
+    <button type="button" onclick="playGame()">Zagraj</button>
+  </form>
+
+  <script>
+    function playGame() {
+      // Pobierz wybór użytkownika
+      const userChoices = document.querySelectorAll('input[name="choice"]:checked');
+      
+      if (userChoices.length === 0) {
+        alert("Wybierz jedną opcję przed rozpoczęciem gry!");
+        return;
+      }
+
+      const userChoice = userChoices[0].value;
+
+      // Losuj wybór komputera
+      const computerChoices = ['kamien', 'papier', 'nozyce'];
+      const computerChoice = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
+      // Określ zwycięzcę
+      const result = determineWinner(userChoice, computerChoice);
+
+      // Wyświetl wynik
+      alert(`Twój wybór: ${userChoice}\nWybór komputera: ${computerChoice}\nWynik: ${result}`);
+    }
+
+    function determineWinner(user, computer) {
+      if (user === computer) {
+        return "Remis!";
+      } else if (
+        (user === 'kamien' && computer === 'nozyce') ||
+        (user === 'papier' && computer === 'kamien') ||
+        (user === 'nozyce' && computer === 'papier')
+      ) {
+        return "Wygrałeś!";
+      } else {
+        return "Przegrałeś!";
+      }
+    }
+  </script>
+
+</body>
+</html>

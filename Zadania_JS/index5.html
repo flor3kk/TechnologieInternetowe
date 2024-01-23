@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number to Text Converter</title>
+</head>
+<body>
+
+<label for="num">Enter a number between -999 and 999:</label>
+<input type="number" id="num" name="num">
+<button onclick="check()">Check</button>
+<p class="result" id="result"></p>
+
+<script>
+    function liczbaNaTekst(liczba) {
+        if (liczba < -999 || liczba > 999) {
+            throw new Error('Liczba poza zakresem od -999 do 999');
+        }
+
+        const jednosci = ['zero', 'jeden', 'dwa', 'trzy', 'cztery', 'pięć', 'sześć', 'siedem', 'osiem', 'dziewięć'];
+        const nastki = ['dziesięć', 'jedenaście', 'dwanaście', 'trzynaście', 'czternaście', 'piętnaście', 'szesnaście', 'siedemnaście', 'osiemnaście', 'dziewiętnaście'];
+        const dziesiatki = ['', '', 'dwadzieścia', 'trzydzieści', 'czterdzieści', 'pięćdziesiąt', 'sześćdziesiąt', 'siedemdziesiąt', 'osiemdziesiąt', 'dziewięćdziesiąt'];
+        const setki = ['', 'sto', 'dwieście', 'trzysta', 'czterysta', 'pięćset', 'sześćset', 'siedemset', 'osiemset', 'dziewięćset'];
+
+        const absLiczba = Math.abs(liczba);
+        const jednostki = absLiczba % 10;
+        const dziesiatkiValue = Math.floor((absLiczba % 100) / 10);
+        const setkiValue = Math.floor(absLiczba / 100);
+
+        let wynik = '';
+
+        if (setkiValue > 0) {
+            wynik += setki[setkiValue] + ' ';
+        }
+
+        if (dziesiatkiValue === 1) {
+            wynik += nastki[jednostki] + ' ';
+        } else {
+            wynik += dziesiatki[dziesiatkiValue] + ' ';
+            wynik += jednosci[jednostki] + ' ';
+        }
+
+        return wynik.trim();
+    }
+
+    function check() {
+        const liczba = parseInt(document.getElementById("num").value);
+
+        try {
+            const wynik = liczbaNaTekst(liczba);
+            document.getElementById("result").innerText = `Wynik: ${wynik}`;
+        } catch (error) {
+            document.getElementById("result").innerText = error.message;
+        }
+    }
+</script>
+
+</body>
+</html>

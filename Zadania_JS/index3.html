@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Checker</title>
+    <style>
+        .result {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <label for="word">Enter a word:</label>
+    <input type="text" id="word" name="word">
+    <button onclick="checkPalindrome()">Check Palindrome</button>
+    <p class="result" id="result"></p>
+
+    <script>
+        function isPalindrome(word) {
+        // Usunięcie spacji i znaków specjalnych oraz zamiana na małe litery
+        const cleanStr = word.replace(/[^\w]/g, '').toLowerCase();
+        
+        // Odwrócenie ciągu znaków
+        const reversedStr = cleanStr.split('').reverse().join('');
+        
+        // Sprawdzenie, czy odwrócony ciąg jest równy oryginalnemu
+        return cleanStr === reversedStr;    
+        }
+
+        function checkPalindrome() {
+            const wordInput = document.getElementById('word').value;
+            const resultElement = document.getElementById('result');
+
+            if (isPalindrome(wordInput)) {
+                resultElement.innerText = `${wordInput} is a palindrome!`;
+            } else {
+                resultElement.innerText = `${wordInput} is not a palindrome.`;
+            }
+        }
+    </script>
+
+</body>
+</html>

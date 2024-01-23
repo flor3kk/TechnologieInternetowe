@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <form onsubmit="return print()">
+        <input type="checkbox" name="szynka" class="checkbox" value="szynka"> szynka <BR>
+        <input type="checkbox" name="pieczarki" class="checkbox" value="pieczarki"> pieczarki <BR>
+        <input type="checkbox" name="kukurydza" class="checkbox" value="kukurydza"> kukurydza <BR>
+        <input type="checkbox" name="ananas" class="checkbox" value="ananas"> ananas <BR>
+        <input type="submit" value="przeslij">
+        <p id="result"></p>
+    </form>
+
+    <script>
+    function print() {
+        let checkboxes = document.getElementsByClassName("checkbox");
+        let resultElement = document.getElementById("result");
+        resultElement.innerHTML = "";  // Clear previous content
+
+        let selectedOptions = [];
+        for (let i = 0; i < checkboxes.length; i++) {
+            if (checkboxes[i].checked) {
+                selectedOptions.push(checkboxes[i].value);
+            }
+        }
+
+        if (selectedOptions.length > 0) {
+            resultElement.innerHTML = "Zaznaczone opcje: " + selectedOptions.join(", ");
+        } else {
+            resultElement.innerHTML = "Brak zaznaczonych opcji";
+        }
+
+        return false;
+    }
+    </script>
+</body>
+</html>

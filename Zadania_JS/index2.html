@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        const liczbaWierszy = 5;
+        const liczbaKolumn = 4;
+
+        // Inicjalizacja dwuwymiarowej tablicy
+        const tablicaDwuwymiarowa = [];
+
+        // Wypełnienie tablicy wartościami
+        for (let i = 0; i < liczbaWierszy; i++) {
+            // Inicjalizacja wiersza
+            const wiersz = [];
+            
+            for (let j = 0; j < liczbaKolumn; j++) {
+                // Dodanie elementu do wiersza
+                wiersz.push(i * liczbaKolumn + j + 1);
+            }
+            
+            // Dodanie wiersza do tablicy dwuwymiarowej
+            tablicaDwuwymiarowa.push(wiersz);
+        }
+
+        // Wyświetlenie tablicy dwuwymiarowej w konsoli
+        console.log(tablicaDwuwymiarowa);
+    </script>
+</body>
+</html>

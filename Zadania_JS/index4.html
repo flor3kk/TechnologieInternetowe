@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <label for="word">Enter a word:</label>
+    <input type="text" id="word" name="word">
+    <button onclick="checkPanagram()">Check Panagram</button>
+    <p class="result" id="result"></p>
+    
+    <script>
+        function checkPanagram() {
+            // Pobierz wartość wprowadzoną przez użytkownika
+            const word = document.getElementById("word").value;
+    
+            // Sprawdź, czy to panagram
+            const result = sprawdzPanagram(word);
+    
+            // Wyświetl wynik i liczbę wystąpień poszczególnych liter
+            document.getElementById("result").innerText = `Is it a panagram? ${result.czyPanagram ? "Yes" : "No"}`;
+            document.getElementById("result").innerHTML += "<br>Liczba wystąpień liter:<br>";
+    
+            const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+            for (let i = 0; i < alphabet.length; i++) {
+                document.getElementById("result").innerHTML += `${alphabet[i]}: ${result.liczbaWystapien[i]}<br>`;
+            }
+        }
+    
+        function sprawdzPanagram(word) {
+            let strArr = word.toLowerCase();
+            let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
+            let liczbaWystapien = new Array(26).fill(0);
+    
+            for (let i = 0; i < strArr.length; i++) {
+                const char = strArr.charCodeAt(i);
+                if (char >= 97 && char <= 122) {
+                    liczbaWystapien[char - 97]++;
+                }
+            }
+    
+            return {
+                czyPanagram: liczbaWystapien.every(liczba => liczba > 0),
+                liczbaWystapien: liczbaWystapien
+            };
+        }
+    </script>
+</body>
+</html>

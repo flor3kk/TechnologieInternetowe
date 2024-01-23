@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #result {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    
+    <form onsubmit="return checkPassword()">
+        <label for="haslo">podaj haslo</label>
+        <input type="password" id="haslo">
+        <input type="submit" value="przesij">
+        <p id="result"></p>
+    </form>
+
+    <script>
+        function checkPassword(){
+            var password = document.getElementById("haslo");
+
+            var znakiSpecjalne = /[!@#$%^&*(),.?{}|<>:]/g;
+            var literyMale = /[a-z]/g;
+            var literyDuze = /[A-Z]/g;
+            var liczby = /[0-9]/g;
+
+
+            if (password.value.length >= 8 && password.value.match(literyMale) && password.value.match(literyDuze) 
+                && password.value.match(liczby) && password.value.match(znakiSpecjalne)) {
+                
+                document.getElementById("result").innerText = "Hasło poprawne";
+                document.getElementById("result").style.color = "green";
+                return true;
+            } else {
+                document.getElementById("result").innerText = "Hasło nie spełnia wymagań.";
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

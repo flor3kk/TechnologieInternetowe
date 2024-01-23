@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="body()">
+    
+    <ul id="myList">
+        <li>Toyota</li>
+        <li>Ford</li>
+        <li>BMW</li>
+        <li>Volkswagen</li>
+        <li>Honda</li>
+        <li>Chevrolet</li>
+        <li>Audi</li>
+        <li>Nissan </li>
+        <li>Mercedes-Benz</li>
+        <li>Hyundai</li>
+        <li>Kia</li>
+        <li>Subaru</li>
+        <li>Mazda</li>
+        <li>Jeep</li>
+        <li>Volvo</li>
+        <li>Porsche</li>
+        <li>Fiat</li>
+        <li>Jaguar</li>
+        <li>Land Rover</li>
+        <li>Tesla</li>
+       </ul>
+       
+    <script>
+
+        async function body(){
+            // Pobierz listę elementów
+            var myList = document.getElementById('myList');
+            var listItems = myList.getElementsByTagName('li');
+
+        // Iteruj przez elementy i dodaj ikonę oraz zmień kolor tła
+            for (var i = 0; i < listItems.length; i++) {
+                // Dodaj ikonę
+
+                // Zmień kolor tła
+                if (i % 2 === 0) {
+                    listItems[i].style.backgroundColor = '#99ccff';
+                    listItems[i].innerHTML += ' <span class="custom-icon">&#xf5de;</span>';
+                } else {
+                    listItems[i].style.backgroundColor = '#6699ff';
+                    listItems[i].innerHTML += ' <span class="custom-icon">&#9734; </span>';
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>

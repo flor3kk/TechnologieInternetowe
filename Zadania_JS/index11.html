@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generator hasła</title>
+</head>
+<body>
+
+  <form>
+    <label for="liczba">Liczba znaków</label>
+    <input type="number" id="liczba"><br>
+
+    <label for="male">Małe litery</label>
+    <input type="checkbox" id="male"><br>
+
+    <label for="duze">Duże litery</label>
+    <input type="checkbox" id="duze"><br>
+
+    <label for="cyfry">Cyfry</label>
+    <input type="checkbox" id="cyfry"><br>
+
+    <label for="znaki">Znaki specjalne</label>
+    <input type="text" id="znaki"><br>
+
+    <button type="button" onclick="create()">Generuj hasło</button>
+    <p id="result"></p>
+  </form>
+
+  <script>
+    function create() {
+      const length = document.getElementById('liczba').value;
+      const includeLowercase = document.getElementById('male').checked;
+      const includeUppercase = document.getElementById('duze').checked;
+      const includeDigits = document.getElementById('cyfry').checked;
+      const specialCharacters = document.getElementById('znaki').value;
+
+      const lowercaseChars = 'abcdefghijklmnopqrstuvwxyz';
+      const uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      const digitChars = '0123456789';
+
+      let validChars = '';
+
+      if (includeLowercase) {
+        validChars += lowercaseChars;
+      }
+
+      if (includeUppercase) {
+        validChars += uppercaseChars;
+      }
+
+      if (includeDigits) {
+        validChars += digitChars;
+      }
+
+      validChars += specialCharacters;
+
+      let password = '';
+
+      for (let i = 0; i < length; i++) {
+        const randomIndex = Math.floor(Math.random() * validChars.length);
+        password += validChars.charAt(randomIndex);
+      }
+
+      document.getElementById('result').innerText = 'Generowane hasło: ' + password;
+    }
+  </script>
+
+</body>
+</html>
