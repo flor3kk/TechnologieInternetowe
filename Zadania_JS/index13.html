@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Katalog Produktów</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    form {
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Katalog Produktów</h1>
+
+  <form id="formularz">
+    <label for="nazwa">Nazwa produktu:</label>
+    <input type="text" id="nazwa" required>
+
+    <label for="cena">Cena produktu:</label>
+    <input type="number" id="cena" required>
+
+    <label for="ilosc">Ilość produktu:</label>
+    <input type="number" id="ilosc" required>
+
+    <button type="button" onclick="dodajProdukt()">Dodaj Produkt</button>
+    <button type="button" onclick="usunProdukt()">Usuń Produkt</button>
+    <button type="button" onclick="aktualizujIlosc()">Aktualizuj Ilość</button>
+  </form>
+
+  <table id="tabela">
+    <thead>
+      <tr>
+        <th>Nazwa</th>
+        <th>Cena</th>
+        <th>Ilość</th>
+      </tr>
+    </thead>
+    <tbody id="tabelkaCialo"></tbody>
+  </table>
+
+  <script src="class.js"></script>
+  <script>
+
+    const katalog = new KatalogProduktow();
+
+    KatalogProduktow.prototype.czyProduktIstnieje = function(nazwa) {
+        return nazwa in this.produkty;
+    };
+
+    function aktualizujTabele() {
+      const tabelkaCialo = document.getElementById('tabelkaCialo');
+      tabelkaCialo.innerHTML = '';
+
+      for (const nazwaProduktu in katalog.produkty) {
+        const produkt = katalog.produkty[nazwaProduktu];
+
+        const wiersz = document.createElement('tr');
+        wiersz.innerHTML = `<td>${produkt.nazwa}</td><td>${produkt.cena}</td><td>${produkt.ilosc}</td>`;
+        tabelkaCialo.appendChild(wiersz);
+      }
+    }
+
+    function dodajProdukt() {
+        const nazwa = document.getElementById('nazwa').value;
+        const cena = parseFloat(document.getElementById('cena').value);
+        const ilosc = parseInt(document.getElementById('ilosc').value, 10);
+
+        if (katalog.czyProduktIstnieje(nazwa)) {
+            console.log(`Produkt o nazwie ${nazwa} już istnieje.`);
+        } else {
+            const nowyProdukt = katalog.dodajProdukt(nazwa, cena, ilosc);
+            if (nowyProdukt) {
+            console.log(`Dodano produkt: ${nazwa}`);
+            aktualizujTabele();
+            }
+        }
+    }
+
+    function usunProdukt() {
+      const nazwa = document.getElementById('nazwa').value;
+      katalog.usunProdukt(nazwa);
+      console.log(`Usunięto produkt: ${nazwa}`);
+      aktualizujTabele();
+    }
+
+    function aktualizujIlosc() {
+      const nazwa = document.getElementById('nazwa').value;
+      const nowaIlosc = parseInt(document.getElementById('ilosc').value, 10);
+
+      katalog.aktualizujIlosc(nazwa, nowaIlosc);
+      console.log(`Zaktualizowano ilość produktu ${nazwa} na ${nowaIlosc}.`);
+      aktualizujTabele();
+    }
+
+  </script>
+
+</body>
+</html>
