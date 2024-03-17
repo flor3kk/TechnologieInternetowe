@@ -1,0 +1,52 @@
+#logo{
+    background-image: url("logo_barwne.png");
+    animation-name: bla;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    width: 700px;
+    height: 700px;
+}
+
+@keyframes bla {
+    100% {background-image: url("logo_monochromatyczne.png");}
+}
+
+#logo2{
+    background-image: url("logo_barwne.png");
+    width: 700px;
+    height: 700px;
+}
+
+#logo2:hover{
+    animation: blabla;
+    animation-duration: 5s;
+}
+
+@keyframes blabla {
+    0% {background-size: 100px;}
+    50% {background-size: 400px;}
+    100% {background-size: 800px;}
+}
+
+#logo3{
+    background-image: url("logo_barwne.png");
+    animation-name: bla;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    width: 700px;
+    height: 700px;
+}
+
+#logo3:hover{
+    animation-name: rotate;
+}
+
+@keyframes rotate {
+    5% {background-size: 100px;}
+    50% {background-size: 200px;}
+    75% {background-size: 400px;}
+    100% {rotate: 360deg;
+        background-image: url("logo_monochromatyczne.png");
+        background-size: 800px;}
+
+}

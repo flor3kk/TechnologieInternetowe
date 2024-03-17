@@ -1,0 +1,37 @@
+body, head{
+    width: auto;
+    height: auto;
+    background-color: #0033a0;
+}
+
+html{
+    box-sizing: border-box;
+    font-family:'Open Sans';
+    text-align: center;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: white;
+}
+
+#search, #do, #od, #waluta, #kolor, #data{
+    border-radius: 25px;
+}
+
+fieldset{
+    border-radius: 35px;
+    border-top: 20px solid white;
+    border-left: 5px solid white;
+}
+
+legend{
+    text-align: left;
+}
+
+#reset, #butsub{
+    border-radius: 25px;
+    background-color: white;
+}
+
+hr{
+    border: #0033a0;
+}

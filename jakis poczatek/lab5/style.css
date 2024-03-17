@@ -1,0 +1,37 @@
+*{
+    box-sizing: border-box;
+}
+
+.container{
+    display: flex;
+    gap: 5px;
+}
+
+.card h3{
+    text-align: center;
+}
+
+.card{
+    text-align: justify;
+    background-color: lightgray;
+    flex-basis: 33%;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-text{
+    margin: 15px;
+}
+
+.bottom{
+    background-color: grey;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.bottom button{
+    background-color: grey;
+    border: none;
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<form action="" method="post">
+
+<h1>formularz kontaktowy</h1>
+    <fieldset><legend>info o uzytkowniku</legend>
+    <label for="name"> podaj swoje imie i nazwisko: </label>   
+    <input id="name" name="imie" pattern="^[a-zA-Z ]{4,}$" title="bLAd"><BR>
+
+    <label for="numer">podaj swoj nr telefonu: </label>
+    <input type="tel" name="numer" id="numer" pattern="\+\d{2} \d{3} \d{3} \d{3}">
+    <small>format: 123-123-123</small><BR>
+
+    <label for="mail">podaj swoj mail: </label>
+    <input type="email" id="mail" name="email" placeholder="mail@domena.com"><BR>
+    
+    <label for="content">podaj tresc wiadomosci </label>
+    <textarea name="content" id="content" cols="20" rows="10" pattern="{40,}"></textarea>
+    <BR>
+
+    <label for="miasta">wybierz miasto:</label>
+    <select name="miasto" id="miasta">
+    <optgroup label="podkarpacie">
+        <option value="zs">zs</option>
+        <option value="A">AA</option>
+    </optgroup>
+
+    <optgroup label="malopolska">
+        <option value="zs">zs</option>
+        <option value="A">AA</option>
+    </optgroup>
+
+    <optgroup label="swietokrzyskie">
+        <option value="zs">zs</option>
+        <option value="A">AA</option>
+    </optgroup>
+
+    <optgroup label="wielkopolskie">
+        <option value="zs">zs</option>
+        <option value="A">AA</option>
+    </optgroup>
+
+    <optgroup label="slaskie">
+        <option value="zs" disabled>zs</option>
+        <option value="A" disabled>AA</option>
+    </optgroup>
+    </select>
+</fieldset>
+    <BR><BR>
+
+    <fieldset><legend>powod zgloszebua</legend>
+    <label>zgłoszenie naduzycia<input type="radio" name="wybor"></label><br>
+    <label>wspolpraca<input type="radio" name="wybor"></label><br>
+    <label>pytania dotyczace tresci<input type="radio" name="wybor"></label><br>
+    <label>zgloszenie problemu technicznego<input type="radio" name="wybor"></label>
+    </fieldset>
+    <BR><br>
+
+    <fieldset><legend>zgody</legend>    
+    <label>akceptuje regulamin <input type="checkbox" name="regulamin" checked required disabled></label>
+        <BR>
+    <label> newsletter<input type="checkbox" name="newsletter" value="xd"></label>
+    </fieldset>
+    <BR><BR>
+
+    <button type="submit">wyslij</button>
+    <button type="reset">reset</button>
+
+</form>
+        <BR>
+
+    <form action="post">
+
+    <fieldset><legend>tworzenie konta</legend>
+        <label for="nick">nick uzytkownika</label>
+        <input type="text" name="nick" id="nick"><BR>
+
+        <label for="pass">podaj haslo</label>
+        <input type="password" name="pass" id="pass"><Br>
+
+        <label for="data">data urodzenia</label>
+        <input type="date" name="data" id="data"><BR>
+
+        <label for="avatar">twoj awatar</label>
+        <input type="file" name="awatar" id="avatar" accept="application/pdf"><BR>
+
+        <label for="color">preferowany kolor</label>
+        <input type="color" name="color" id="color"><BR><br>
+
+        <button type="submit">wyslij</button>
+        <button type="reset">reset</button>
+
+        </fieldset>
+    </form>
+
+
+    <form action="post">
+
+        <fieldset><legend>rezerwacja biletu</legend>
+            <label for="miasto">miasto</label>
+            <input type="search" name="miasto" id="miasto"><BR>
+    
+            <label for="time">czas odjazdu</label>
+            <input type="time" name="time" id="time"><Br>
+    
+            <label for="data">data odjazdu</label>
+            <input type="date" name="data" id="data" min="2023-10-20" max="2023-12-31"><BR>
+    
+            <label for="liczba">liczba biletow</label>
+            <input type="range" name="liczba" id="liczba" min="1" max="10" step="1"><BR>
+    
+            <button type="submit">wyslij</button>
+            <button type="reset">reset</button>
+    
+            </fieldset>
+        </form>
+
+</body>
+</html>

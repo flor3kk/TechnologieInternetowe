@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zad9</title>
+    <link rel="stylesheet" href="styl2.css">
+</head>
+<body>
+    
+    <h1>wyszukaj produkt</h1>
+
+    <form action="POST">
+
+    <label for="search"></label>
+    <input type="text" name="szukaj" id="search" placeholder="&#128270; nazwa produktu">
+    
+    <BR><BR>
+
+    <fieldset><legend>cena</legend>
+    
+        <label for="od">od</label>
+        <input type="number" name="od" id="od">
+
+        <label for="do">do</label>
+        <input type="number" name="do" id="do">
+
+        
+        <select name="waluta" id="waluta">
+            <option value="PLN">PLN</option>
+            <option value="EUR">EURO</option>
+            <option value="DOL">DOLAR</option>
+        </select>
+
+    
+    </fieldset>
+    
+    <BR>
+    
+        <fieldset><legend>ocena produktu</legend>
+    
+        <label><input type="radio" name="ocena">5.0 &#9734;&#9734;&#9734;&#9734;&#9734; </label><br>
+        <label><input type="radio" name="ocena">4.0 &#9734;&#9734;&#9734;&#9734;</label><br>
+        <label><input type="radio" name="ocena">3.0 &#9734;&#9734;&#9734;</label><br>
+        <label><input type="radio" name="ocena">2.0 &#9734;&#9734;</label><br>
+        <label><input type="radio" name="ocena">1.0 &#9734;</label>
+
+    </fieldset>
+
+    <hr>
+    <BR>
+
+    <label for="kolor">kolor</label>
+    <input type="color" name="kolor" id="kolor" value="#f6b73c"><BR> 
+
+    <label for="data">data produkcji</label>
+    <input type="datetime-local" name="data" id="data"><BR>
+
+    <label for="ladowanie">szybkie ladowanie</label>
+    0W<input type="range" id="ladowanie" name="waty" min="0" max="150" step="10">150W<BR>
+        
+    <BR>
+
+    <fieldset><legend>inne:</legend><BR>
+    
+        <input type="checkbox" name="dual-sim"><label>dual-sim</label>
+        <input type="checkbox" name="5g" ><label>5G</label>
+        <input type="checkbox" name="gorilla_glass"><label >gorilla glass</label>
+        <BR><BR>
+    
+    </fieldset><BR>
+
+    <label><input type="submit" value="filtruj" id="butsub"></label>
+    <label><input type="reset" value="usun filtry" id="reset"></label>
+
+    </form>
+</body>
+</html>

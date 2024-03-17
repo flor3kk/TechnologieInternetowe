@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="rozklad">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="train_info" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="nr_poc" type="xs:string" />
+                            <xs:element name="nazwa" type="xs:string" />
+                            <xs:element name="rodzaj" type="xs:string" />
+                            <xs:element name="nazwa_poc" type="xs:string" />
+                            <xs:element name="stations">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="station_info" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="station" type="xs:string" />
+                                                    <xs:element name="godz_przyj" type="xs:string" />
+                                                    <xs:element name="godz_odj" type="xs:string" />
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="wagony">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="wagony_info">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="nazwa_wag" type="xs:string" />
+                                                    <xs:element name="ilosc" type="xs:string" />
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

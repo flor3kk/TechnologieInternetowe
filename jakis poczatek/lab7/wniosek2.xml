@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+
+<wniosek xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="wniosek.xsd">
+
+
+<id_rodzica>234</id_rodzica>
+<znak_sprawy_wysylajacego></znak_sprawy_wysylajacego>
+<typ>ORGANIZED</typ>
+<data_przygotowania>2002-05-30T09:00:00</data_przygotowania>
+<szczegoly_spisu_zo>
+
+    <opis> sadasdas </opis>
+    <data_utworzenia> 	30.06.2020 </data_utworzenia>
+    <najwczesniejsza_data_w_spisie> 2020-05-05 </najwczesniejsza_data_w_spisie>
+    <najpozniejsza_data_w_spisie> 2020-05-05 </najpozniejsza_data_w_spisie>
+    <ilosc_materialow> 2 </ilosc_materialow>
+    <ilosc_pozycji> 2 </ilosc_pozycji>
+
+</szczegoly_spisu_zo>
+
+</wniosek>

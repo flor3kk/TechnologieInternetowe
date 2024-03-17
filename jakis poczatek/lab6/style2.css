@@ -1,0 +1,29 @@
+body{
+    background-color: black;
+}
+
+#tlo{
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+    border: 2px yellow solid;
+}
+
+#toczy{
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+    border-top: green solid 5px;
+    animation: kolo;
+    animation-timing-function: linear;
+    animation-duration: 5s ;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes kolo{
+    25% {rotate: 90deg;}
+    50% {rotate: 180deg;}
+    75% {rotate: 270deg;}
+    100% {rotate: 360deg;}
+}

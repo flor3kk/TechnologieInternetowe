@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+
+<rozklad xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="rozklad.xsd">
+
+    <train_info>
+        <nr_poc>1</nr_poc>
+        <nazwa>Florek</nazwa>
+        <rodzaj>osoboby</rodzaj>
+        <nazwa_poc>pendolino</nazwa_poc>
+        <stations>
+            <station_info>
+                <station>frysztak</station>
+                <godz_przyj>2022-05-30T09:00:00</godz_przyj>
+                <godz_odj>2022-05-30T09:00:00</godz_odj>
+            </station_info>
+            <station_info>
+                <station> krosno </station>
+                <godz_przyj>2022-05-30T09:00:00</godz_przyj>
+                <godz_odj>2022-05-30T09:00:00</godz_odj>
+            </station_info>
+        </stations>
+        
+        <wagony>
+            <wagony_info>
+                <nazwa_wag>restauracyjny</nazwa_wag>
+                <ilosc>2</ilosc>
+            </wagony_info>
+        </wagony>
+    </train_info>
+
+    <train_info>
+        <nr_poc>2</nr_poc>
+        <nazwa>Florek</nazwa>
+        <rodzaj>osoboby</rodzaj>
+        <nazwa_poc>pendolino</nazwa_poc>
+        <stations>
+            <station_info>
+                <station>frysztak</station>
+                <godz_przyj>2022-05-30T09:00:00</godz_przyj>
+                <godz_odj>2022-05-30T09:00:00</godz_odj>
+            </station_info>
+            <station_info>
+                <station> krosno </station>
+                <godz_przyj>2022-05-30T09:00:00</godz_przyj>
+                <godz_odj>2022-05-30T09:00:00</godz_odj>
+            </station_info>
+        </stations>
+
+        <wagony>
+            <wagony_info>
+                <nazwa_wag>restauracyjny</nazwa_wag>
+                <ilosc>2</ilosc>
+            </wagony_info>
+        </wagony>
+    </train_info>
+    
+</rozklad>

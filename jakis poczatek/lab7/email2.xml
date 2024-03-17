@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+
+<emails xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="emails.xsd">
+
+    <email> 
+        <to>address@mail.com</to> 
+        <from>Spam</from> 
+        <heading>Offer</heading> 
+        <body>Do you want to buy our products?</body> 
+    </email> 
+    <email> 
+        <to>address@mail.com</to>
+        <from>coworker@mail.com</from> 
+        <heading>Document</heading> 
+        <body>Please see this document and reply asap.</body>
+        <attachements>
+                <attachement>
+                <name>Document.odt</name>
+            </attachement>
+        </attachements> 
+    </email> 
+    
+    <email> 
+        <to>address@mail.com</to> 
+        <from>coworker@mail.com</from> 
+        <heading>Document</heading> 
+        <body>Please see this document and reply asap.</body>
+        <attachements>
+            <attachement>
+            <name>Document.odt</name>
+            </attachement>
+        
+            <attachement>
+                <name>Document.odt</name>
+            </attachement>
+            <attachement>
+                <name>Document.odt</name>
+            </attachement>
+        </attachements> 
+    </email> 
+
+    <email> 
+        <to>address@mail.com</to> 
+        <from>Spam</from> 
+        <heading>Offer</heading> 
+        <body>Do you want to buy our products?</body> 
+    </email> 
+    
+</emails>

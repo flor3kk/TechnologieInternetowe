@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <?xml-stylesheet type="text/css" href="person.css"?> -->
+<!-- <?xml-stylesheet type="text/xsl" href="person.xsl"?> -->
+
+<person xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="person.xsd">
+ <name>Jan</name>
+ <surname>Kowalski</surname>
+<address>
+    <city>Rzeszów</city>
+    <street>Rejtana 16c</street>
+    </address>
+    <address type="correspondence">
+    <city>Rzeszów</city>
+    <street>Rejtana 16c</street>
+    </address>
+   </person>
+   

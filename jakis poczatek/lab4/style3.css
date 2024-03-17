@@ -1,0 +1,79 @@
+html, body{
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 0;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+#GLOWNA{
+    display: flex;
+    list-style: none;    
+    color: white;
+    text-align: center;
+}
+
+.lista{
+    background-color: blue;
+    width: 150px;
+    height: 50px;
+}
+.lista:hover{
+    background-color: darkblue;
+    transition-duration: 0.5s;
+}
+
+#student, #doktorant{
+    background-color: blue;
+    width: 150px;
+    height: 50px;
+    padding: 0;
+    list-style: none;
+}
+#student:hover, #doktorant:hover{
+    background-color: darkblue;
+    transition-duration: 0.5s;
+}
+
+#student ul, #student li, #doktorant li, #student #kierunek li{
+    display: none;
+}
+
+#student:hover li, #student:hover ul, #doktorant:hover li{
+    display: block;
+    background-color: blue;
+    width: 150px;
+    height: 50px;
+    position: relative;
+    top: 30px;
+}
+
+#student li:hover, #doktorant li:hover, #student #kierunek:hover{
+    background-color: darkblue;
+    transition-duration: 0.5s;
+}
+
+#kierunek{
+    padding: 0;
+}
+#kierunek li{
+    display: none;
+}
+
+#student #kierunek:hover li{
+    display: block;
+    background-color: green;
+    width: 150px;
+    height: 50px;
+    position: relative;
+    left: 150px;
+    top: -19px;
+}
+
+#student #kierunek li:hover{
+    background-color: darkgreen;
+    transition-duration: 0.5s;
+}

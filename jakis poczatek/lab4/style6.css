@@ -1,0 +1,35 @@
+
+/*@layer pierwsza, druga, trzecia;
+@import url(test6.css);
+
+
+@layer pierwsza{
+    section{
+        color: black !important ;
+    }
+}
+
+@layer druga{
+    section{
+        color: red;
+    }
+}
+
+@layer trzecia{
+    section{
+        color: blue;
+    }
+}
+
+section{
+    color: green;
+}
+*/
+
+section{
+    padding: 1em;
+    filter: blur(1px);
+    transform: scale(200%);
+    transform: rotate(25deg);
+    color: rgba(0, 0, 255, 0.5);
+}

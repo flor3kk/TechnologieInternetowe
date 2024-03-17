@@ -1,0 +1,52 @@
+*{
+    box-sizing: border-box;
+}
+
+/* .container{
+    display: flex;
+    gap: 5px;
+    max-width: 500px;
+    overflow-x: scroll
+    flex-wrap: wrap;
+} */
+
+
+.container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    gap: 10px;
+    }
+/* .container::-webkit-scrollbar {
+    display: none;
+} */
+
+.card h3{
+    text-align: center;
+}
+
+.card{
+    text-align: justify;
+    background-color: lightgray;
+    flex-basis: 33%;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+    /* min-width: 200px; */
+}
+
+.main-text{
+    margin: 15px;
+}
+
+.bottom{
+    background-color: grey;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.bottom button{
+    background-color: grey;
+    border: none;
+}

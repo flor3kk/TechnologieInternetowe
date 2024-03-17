@@ -1,0 +1,18 @@
+section{
+    border: 5px solid orange !important;
+    color: white;
+    background-color: black;
+}
+
+#tabela tr:nth-child(odd){
+    background-color: blue;
+}
+
+#tabela tr:nth-child(even){
+    background-color: red;
+}
+
+#tabela th{
+    background-color: #666652;
+}
+

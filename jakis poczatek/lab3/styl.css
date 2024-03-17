@@ -1,0 +1,23 @@
+body, head{
+    width: auto;
+    height: auto;
+    background-color: #5d4e49;
+}
+
+html{
+    box-sizing: border-box;
+    font-family:'Corbel';
+}
+
+#search, #do, #od, #waluta, #kolor, #data{
+    border-radius: 25px;
+}
+
+fieldset{
+    border-radius: 20px;
+}
+
+#reset, #butsub{
+    border-radius: 25px;
+    background-color: #414141;
+}
